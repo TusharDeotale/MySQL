@@ -1,0 +1,12 @@
+use cdac1;
+show tables;
+select * from employees;
+select employee_id, last_name, hire_date from employees where hire_date > '1990-01-01' order by hire_date asc;
+select employee_id, last_name, manager_id from employees where employee_id between 101 and 110 order by manager_id desc;
+select employee_id, last_name, manager_id, job_id from employees where last_name like '%j%' or last_name like '%k%' or last_name like '%l%' order by last_name asc;
+select employee_id, last_name, manager_id, job_id from employees where job_id in(9,10,13,19) and manager_id in(101,102,103);
+select employee_id, last_name, manager_id, phone_number from employees where phone_number is not null and manager_id in(105,106,107);
+select employee_id, last_name, manager_id from employees where employee_id between 101 and 110 order by employee_id desc;
+select employee_id, last_name, hire_date from employees where hire_date between '1990-01-01' and '1995-12-31';
+select employee_id, last_name, email from employees where email is null;
+select employee_id,last_name,salary,((salary*2)/100) "commission" from employees where salary > 15000;
